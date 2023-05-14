@@ -1,0 +1,15 @@
+{
+  "name": "placement-cell",
+  "version": "1.0.0",
+  "description": "In this web application employee can maintain the data of student",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akshay",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
