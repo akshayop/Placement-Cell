@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #010409;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    main {
+        min-height: 80vh;
+    }
+}

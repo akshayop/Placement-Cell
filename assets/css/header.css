@@ -1,0 +1,11 @@
+header {
+  padding: 1rem 3rem;
+  background-color: #161b21;
+}
+header #logo-name {
+  font-size: 1.7rem;
+}
+header ul li {
+  font-size: 1.4rem;
+  padding-right: 2rem;
+}
