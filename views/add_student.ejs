@@ -1,0 +1,22 @@
+<div>
+    <h2>Student Details</h2>
+
+    <form action="/students/create-student" method="post">
+
+        <input type="text" name="name" placeholder="Student Full Name" required>
+        <input type="email" name="email" placeholder="Student Email" required>
+        <input type="text" name="batch" placeholder="Student Batch" required>
+        <select name="status" required>
+            <option value="">Select Status</option>
+            <option name="placed" value="Placed">Placed</option>
+            <option name="notPlaced" value="Not Placed">Not Placed</option>
+        </select>
+
+        <div>
+            <input type="number" min="0" max="100" name="dsa_mark" placeholder="DSA Mark" required>
+            <input type="number" min="0" max="100" name="fe_mark" placeholder="FE Mark" required>
+            <input type="number" min="0" max="100" name="be_mark" placeholder="BE Mark" required>
+            <input type="submit" value="Add Details">
+        </div>
+    </form>
+</div>
