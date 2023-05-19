@@ -1,0 +1,27 @@
+<li>
+
+    <div>
+        <p>
+            <%= interview.company_name %>
+        </p>
+
+        <a href="/interview/delete-interview/<%= interview._id %>">
+            <i class="fa-solid fa-user-minus"></i>
+        </a>
+    </div>
+
+    <div>
+        <p>
+            Date:
+        </p>
+
+        <p>
+            <%= interview.date %>
+        </p>
+    </div>
+
+    <div>
+        <a href="/interview/show-details/<%= interview._id %>">View number of applied candidates are <%= interview.students.length %></a>
+    </div>
+
+</li>   

@@ -8,8 +8,38 @@
             <h4>Students List</h4>
 
             <p>
-                <a href="students/add-student">Add<i class="fa-solid fa-user-plus"></i></a>
+                <a href="students/add-student">
+                    add<i class="fa-solid fa-user-plus"></i>
+                </a>
             </p>
         </div>
+
+        <ul>
+            <% for(student of students) { %>
+
+                <%- include('_studentList') -%>
+
+            <% } %>
+        </ul>
+    </section>
+
+    <section>
+        <div>
+            <h3>Interviews List</h3>
+
+            <p>
+                <a href="/interview/add-interviews">
+                    add<i class="fa-solid fa-user-plus"></i>
+                </a>
+            </p>
+        </div>
+
+        <ul>
+            <% for(interview of interviews) { %>
+
+                <%- include('_interviewList') -%>
+
+            <% } %>
+        </ul>
     </section>
 </div>

@@ -1,0 +1,71 @@
+<li>
+
+    <div>
+        <p>
+            <%= student.name %>
+        </p>
+
+        <a href="/students/delete-student/<%= student._id %>">
+            <i class="fa-solid fa-user-minus"></i>
+        </a>
+    </div>
+
+    <div>
+        <p>
+            Batch:
+        </p>
+
+        <p>
+            <%= student.batch %>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            Status:
+        </p>
+
+        <p>
+            <%= student.status %>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            Scores:
+        </p>
+
+        <div>
+            <p>
+                DSA
+            </p>
+    
+            <p>
+                FE
+            </p>
+    
+            <p>
+                BE
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <%= student.courseMarks[0] %>
+            </p>
+
+            <p>
+                <%= student.courseMarks[1] %> 
+            </p>
+
+            <p>
+                <%= student.courseMarks[2] %> 
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <a href="/students/show-details/<%= student._id %>">View</a>
+        <a href="/students/edit-details/<%= student._id %>">Edit</a>
+    </div>
+</li>

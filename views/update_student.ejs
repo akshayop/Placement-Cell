@@ -1,0 +1,34 @@
+<div>
+    <h2>Update Student Details</h2>
+
+    <form action="/students/update-student/<%= student._id %>" method="post">
+        
+        <div>
+            <input type="text" name="name" value="<%= student.name %>" placeholder="Name" required>
+            <input type="email" name="email" value="<%= student.email %>" placeholder="Email" required>
+            <input type="text" name="batch" value="<%= student.batch%>" placeholder="Batch" required>
+        </div>
+
+        <div>
+            <h2>Add Interview</h2>
+
+            <input type="text" name="company_name" placeholder="Company Name" required>
+            <input type="date" name="interview_date" placeholder="Date" required>
+
+            <select name="status">
+                <option value="">Select Status</option>
+                <option name="Passed" value="Passed">PASS</option>
+                <option name="Failed" value="Failed">FAIL</option>
+                <option name="On hold" value="On hold">On hold</option>
+                <option name="Ongoing" value="Ongoing" selected>Ongoing</option>
+                <option name="Didn't attempt" value="Didn't attempt">Didn't attempt</option>
+            </select>
+
+            <input type="submit" value="Update Details">
+        </div>
+    </form>
+
+    
+
+   
+</div>
