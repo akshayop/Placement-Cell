@@ -12,12 +12,12 @@ passport.use(new LocalStrategy({
         User.findOne({email: email})
             .then((user) => {
                 if(!user || user.password != password) {
-                    console.log('invalid password');
+                    req.flash('error', 'Invalid Username/Password')
                     return done(null, false);
                 }
                 return done(null, user);
             }).catch( (err) => {
-                console.log(err, 'error');
+                req.flash( 'error', err);
                 return done(err);
             });
     }

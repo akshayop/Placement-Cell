@@ -30,7 +30,7 @@ module.exports.signIn = (req, res) => {
 module.exports.create = async (req, res) => {
     try{
         if(req.body.password != req.body.confirmPassword) {
-            console.log("incorrect password");
+            req.flash('error', "Password didn't matched. Try again!")
             return res.redirect('back');
         }
 
@@ -43,17 +43,17 @@ module.exports.create = async (req, res) => {
             // Create new user
 
             User.create(req.body).then(() => {
-                console.log('Signed Up');
+                req.flash('success', "Successfully signed up")
                 return res.redirect('/users/sign-in')
             })
             .catch( (err) => {
-                console.log(err,"erkr");
+                req.flash('error', "Something went wrong while creating User")
                 return res.redirect('back');
             });
         }
 
         else {
-            console.log("already exists");
+            req.flash('warning', "User already exists!")
             return res.redirect('back');
         }
 
@@ -66,6 +66,18 @@ module.exports.create = async (req, res) => {
 // sign in create the session for the user
 
 module.exports.createSession = (req, res) => {
-    console.log('successfully signed in ');
+    req.flash('success', 'successfully signed in');
     return res.redirect('/');
+}
+
+// removing the session from the db
+
+module.exports.destroySession = (req, res, next) => {
+    req.logout( (err) => {
+        if(err)  {
+            return next()
+        }
+        req.flash('success', 'You have logged out!');
+        return res.redirect('/');
+    });
 }

@@ -3,9 +3,17 @@ const Student = require('../models/students');
 // Student deatils page
 module.exports.addStudent = async (req, res) => {
     
-    return res.render('add_student', {
-        title: 'Placement Cell | Add Students'
-    })
+    if(req.isAuthenticated()) {
+
+        return res.render('add_student', {
+            title: 'Placement Cell | Add Students'
+        });
+    }
+
+    else {
+        req.flash('error', 'Please Sign in again...!');
+        res.redirect('/users/sign-in');
+    }
 }
 
 // student details adding to db
@@ -13,7 +21,9 @@ module.exports.addStudent = async (req, res) => {
 module.exports.createStudent = async (req, res) => {
     
     let checkStudent = await Student.findOne({email: req.body.email});
+    // check if student is already exists or not
 
+    // if not exits then create a student data
     if(!checkStudent) {
         let student = await Student.create({
             name: req.body.name,
@@ -24,15 +34,18 @@ module.exports.createStudent = async (req, res) => {
         });
 
         if(student) {
+            req.flash('success', 'Student details added')
             res.redirect('/')
         }
 
         else {
+            req.flash('error', 'Failed to add student details')
             res.redirect('back')
         }
     }
 
     else {
+        re1.flash('warning', 'User alredy exists')
         res.redirect('back');
     }
 }
