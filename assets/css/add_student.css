@@ -1,0 +1,110 @@
+#add-student-container {
+  position: relative;
+}
+#add-student-container h2 {
+  position: absolute;
+  left: 25.2rem;
+  top: 4.9rem;
+}
+#add-student-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40rem;
+  margin-left: 23.2rem;
+  min-height: 80vh;
+  gap: 1rem;
+  background-color: #1d2b3a;
+}
+#add-student-container form .input-box {
+  position: relative;
+  width: 36rem;
+  margin-left: 2rem;
+}
+#add-student-container form .input-box input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #1d2b3a;
+  border-radius: 0.7rem;
+  outline: none;
+  color: white;
+  font-size: 1em;
+  transition: 0.5s;
+}
+#add-student-container form .input-box input::-webkit-outer-spin-button, #add-student-container form .input-box input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#add-student-container form .input-box span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  transition: 0.5s;
+}
+#add-student-container form .input-box input:valid ~ span,
+#add-student-container form .input-box input:focus ~ span {
+  color: #00dfc4;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid #00dfc4;
+  border-right: 1px solid #00dfc4;
+  letter-spacing: 0.2em;
+}
+#add-student-container form .input-box input:valid,
+#add-student-container form .input-box input:focus {
+  border: 1px solid #00dfc4;
+}
+#add-student-container form select {
+  width: 10rem;
+  font-size: 1em;
+  margin-left: 2rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+  color: rgba(255, 255, 255, 0.25);
+  background: #1d2b3a;
+  outline: none;
+}
+#add-student-container form select option {
+  color: white;
+  border-radius: 0.7rem;
+}
+#add-student-container form select:hover {
+  cursor: pointer;
+  outline: none;
+}
+#add-student-container form select:valid, #add-student-container form select:focus {
+  color: white;
+  border: 1px solid #00dfc4;
+}
+#add-student-container form .marks-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#add-student-container form .marks-container .input-box {
+  width: 10.6rem;
+}
+#add-student-container form .marks-container .input-box input {
+  width: 85%;
+}
+#add-student-container form input[type=submit] {
+  font-size: 1rem;
+  width: 35.7rem;
+  height: 3rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  border: none;
+  color: white;
+  border-radius: 0.7rem;
+  background-color: #49c1a2;
+  transition: 0.5s;
+}
+#add-student-container form input[type=submit]:hover {
+  background-color: #4bb543;
+  cursor: pointer;
+}
