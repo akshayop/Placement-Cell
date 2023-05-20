@@ -1,0 +1,90 @@
+#home-container a {
+  color: rgb(22, 121, 243);
+}
+#home-container #studentList-container #student-heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7rem;
+  margin: 0 2.5rem;
+}
+#home-container #studentList-container ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: -1rem;
+  margin-right: 2rem;
+}
+#home-container #studentList-container ul li {
+  width: 17rem;
+  background: #161B22;
+  margin-bottom: 2rem;
+  border-radius: 0.7rem;
+  transition: 0.6s transform;
+}
+#home-container #studentList-container ul li .stud-container-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+#home-container #studentList-container ul li .stud-container-details p {
+  font-weight: 700;
+}
+#home-container #studentList-container ul li #stud-scores {
+  padding: 0 1rem;
+}
+#home-container #studentList-container ul li #stud-scores p {
+  font-weight: 700;
+}
+#home-container #studentList-container ul li #stud-scores .stud-mark {
+  display: flex;
+  padding-left: 4rem;
+  justify-content: space-between;
+}
+#home-container #studentList-container ul li #view-edit {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 900;
+  padding: 1rem 0;
+}
+#home-container #studentList-container ul li:hover {
+  transform: scale(1.1);
+}
+#home-container #interviewList-container #interview-heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7rem;
+  margin: 0 2.5rem;
+}
+#home-container #interviewList-container ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: -1rem;
+  margin-right: 2rem;
+}
+#home-container #interviewList-container ul li {
+  width: 17rem;
+  background: #161B22;
+  margin-bottom: 2rem;
+  border-radius: 0.7rem;
+  transition: 0.6s transform;
+}
+#home-container #interviewList-container ul li .iv-container-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+#home-container #interviewList-container ul li .iv-container-details p {
+  font-weight: 700;
+}
+#home-container #interviewList-container ul li #view-total {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 900;
+  padding: 1rem 0;
+}
+#home-container #interviewList-container ul li:hover {
+  transform: scale(1.1);
+}

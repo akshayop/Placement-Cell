@@ -1,6 +1,6 @@
 <li>
 
-    <div>
+    <div id="stud-name" class="stud-container-details">
         <p>
             <%= student.name %>
         </p>
@@ -10,61 +10,74 @@
         </a>
     </div>
 
-    <div>
+    <div id="stud-batch" class="stud-container-details">
         <p>
             Batch:
         </p>
 
-        <p>
+        <div>
             <%= student.batch %>
-        </p>
+        </div>
+            
+        
     </div>
 
-    <div>
+    <div id="stud-scores">
+        <p>
+            Scores
+        </p>
+
+        <div class="stud-mark">
+            
+            <div>
+                <b>DSA:</b>
+            </div>
+                
+
+            <div>
+                <%= student.courseMarks[0] %>
+            </div>
+                
+
+        </div>
+
+        <div class="stud-mark">
+            <div>
+                <b>FE:</b>
+            </div>
+                
+            <div>
+                <%= student.courseMarks[1] %> 
+            </div>
+            
+        </div>
+
+        <div class="stud-mark">
+            <div>
+                <b>BE:</b>
+            </div>
+            
+            <div>
+                <%= student.courseMarks[2] %>
+            </div>
+            
+        </div>
+                
+    </div>
+
+    <div id="stud-status" class="stud-container-details">
         <p>
             Status:
         </p>
 
-        <p>
+        <div>
             <%= student.status %>
-        </p>
+        </div>
+            
+        
     </div>
 
-    <div>
-        <p>
-            Scores:
-        </p>
-
-        <div>
-            <p>
-                DSA
-            </p>
-    
-            <p>
-                FE
-            </p>
-    
-            <p>
-                BE
-            </p>
-        </div>
-
-        <div>
-            <p>
-                <%= student.courseMarks[0] %>
-            </p>
-
-            <p>
-                <%= student.courseMarks[1] %> 
-            </p>
-
-            <p>
-                <%= student.courseMarks[2] %> 
-            </p>
-        </div>
-    </div>
-
-    <div>
+    <div id="view-edit">
         <a href="/students/show-details/<%= student._id %>">View</a>
         <a href="/students/edit-details/<%= student._id %>">Edit</a>
     </div>

@@ -1,19 +1,41 @@
-<div>
-    <h2>Update Student Details</h2>
+<link rel="stylesheet" href="/css/update-student.css">
+
+<div id="update-container">
 
     <form action="/students/update-student/<%= student._id %>" method="post">
         
-        <div>
-            <input type="text" name="name" value="<%= student.name %>" placeholder="Name" required>
-            <input type="email" name="email" value="<%= student.email %>" placeholder="Email" required>
-            <input type="text" name="batch" value="<%= student.batch%>" placeholder="Batch" required>
-        </div>
+        <div id="student-container">
+                <h2>Update Student Details</h2>
 
-        <div>
+            <div class="input-box">
+                <input type="text" name="name" value="<%= student.name %>" required="required">
+                <span>Name</span>
+            </div>
+            
+            <div class="input-box">
+                <input type="email" name="email" value="<%= student.email %>" required="required">
+                <span>Email</span>
+            </div>
+            
+            <div class="input-box">
+                <input type="text" name="batch" value="<%= student.batch%>" required="required">
+                <span>Batch</span>
+            </div>
+        </div>
+        
+        <div id="interview-container">
             <h2>Add Interview</h2>
 
-            <input type="text" name="company_name" placeholder="Company Name" required>
-            <input type="date" name="interview_date" placeholder="Date" required>
+            <div class="input-box">
+                <input type="text" name="company_name" required="required">
+                <span>Company Name</span>
+            </div>
+            
+            <div class="input-box">
+                <input type="date" name="interview_date" required="required">
+                <span>Interview Date</span>
+            </div>
+            
 
             <select name="status">
                 <option value="">Select Status</option>
@@ -26,6 +48,8 @@
 
             <input type="submit" value="Update Details">
         </div>
+
+        
     </form>
 
     

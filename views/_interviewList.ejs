@@ -1,6 +1,6 @@
 <li>
 
-    <div>
+    <div id="company-name" class="iv-container-details">
         <p>
             <%= interview.company_name %>
         </p>
@@ -10,18 +10,19 @@
         </a>
     </div>
 
-    <div>
+    <div class="iv-container-details">
         <p>
             Date:
         </p>
 
-        <p>
+        <div>
             <%= interview.date %>
-        </p>
+        </div>
+            
     </div>
 
-    <div>
-        <a href="/interview/show-details/<%= interview._id %>">View number of applied candidates are <%= interview.students.length %></a>
+    <div id="view-total">
+        <a href="/interview/show-details/<%= interview._id %>">Total candidate are <%= interview.students.length %></a>
     </div>
 
 </li>   
