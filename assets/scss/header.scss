@@ -1,15 +1,22 @@
 header{
-    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 3rem;
     background-color: #161b21;
     #logo-name{
         font-size: 1.7rem;
-        
+        font-weight: 500;
+        letter-spacing: 0.2rem;
     }
 
     ul {
+        display: flex;
+        justify-content: space-between;
         li {
-            font-size: 1.4rem;
-            padding-right: 2rem;
+            font-size: 1rem;
+            padding-right: 1rem;
+
         }
     }
 }
