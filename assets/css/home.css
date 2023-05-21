@@ -1,5 +1,8 @@
 #home-container a {
-  color: rgb(22, 121, 243);
+  color: rgba(0, 106, 255, 0.824);
+}
+#home-container a:hover {
+  color: rgba(3, 126, 198, 0.838);
 }
 #home-container #studentList-container #student-heading {
   display: flex;

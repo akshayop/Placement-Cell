@@ -1,0 +1,28 @@
+#stud-profile-container #stud-details {
+  width: 30rem;
+  margin: auto;
+  position: relative;
+}
+#stud-profile-container #stud-details h2 {
+  margin: 2rem 0 0.2rem 0.2rem;
+}
+#stud-profile-container #stud-details #stud-marks {
+  display: flex;
+  justify-content: space-between;
+}
+#stud-profile-container .stud-show {
+  background-color: #161B22;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.7rem;
+  letter-spacing: 0.2rem;
+}
+#stud-profile-container .stud-show .disp-tag {
+  padding: 0.3rem 0;
+  font-size: 1rem;
+  color: lightgray;
+}
+#stud-profile-container .stud-show .disp-name {
+  padding-bottom: 0.3rem;
+  font-size: 1.4rem;
+}
