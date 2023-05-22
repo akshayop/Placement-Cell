@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Interview = require("./interview");
 
 const studentsSchema = new mongoose.Schema({
     email: {
@@ -28,11 +27,11 @@ const studentsSchema = new mongoose.Schema({
 
     interview: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: Interview
+        ref: 'Interview'
     }]
 }, {
     timestamps: true
 });
 
-const Students = mongoose.model('Student', studentsSchema);
+const Students = mongoose.model('Students', studentsSchema);
 module.exports = Students;

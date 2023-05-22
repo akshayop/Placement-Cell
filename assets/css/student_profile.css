@@ -2,6 +2,7 @@
   width: 30rem;
   margin: auto;
   position: relative;
+  margin-bottom: 3rem;
 }
 #stud-profile-container #stud-details h2 {
   margin: 2rem 0 0.2rem 0.2rem;
@@ -25,4 +26,16 @@
 #stud-profile-container .stud-show .disp-name {
   padding-bottom: 0.3rem;
   font-size: 1.4rem;
+}
+#stud-profile-container #iv-details {
+  width: 30rem;
+  margin: auto;
+  position: relative;
+}
+#stud-profile-container #iv-details h2 {
+  margin: 2rem 0 0.2rem 0.2rem;
+}
+#stud-profile-container #iv-details #iv-view {
+  display: flex;
+  justify-content: space-between;
 }

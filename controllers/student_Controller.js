@@ -96,7 +96,8 @@ module.exports.editDetails = async (req, res) => {
         if(student) {
             return res.render('update_student', {
                 title: 'Placement Cell | Student Deatils',
-                student: student
+                student: student,
+                
             });
         }
 
@@ -117,7 +118,6 @@ module.exports.updateStudent = async (req, res) => {
         let company = await Interview.findOne({company_name: req.body.company_name});
 
         // checking whether interview exists or not
-
         if(!company) {
             company = await Interview.create({
                 company_name: req.body.company_name,

@@ -6,7 +6,7 @@ let checkInterview = async (id) => {
         .populate({
             path: 'students',
             populate: {
-                path: 'students'
+                path: 'student'
             }
         });
 
@@ -52,5 +52,75 @@ module.exports.createInterviews = async (req, res ) => {
     else {
         req.flash('error', 'Failed to create an Interview');
         res.redirect('back');
+    }
+}
+
+module.exports.showDetails = async (req, res) => {
+    try {
+        let interview = await checkInterview(req.params.id);
+        let student = await checkInterview(req.params.id);
+        return res.render('interview_profile', {
+            title: 'Placement Cell | Interview Details',
+            interview: interview
+        })
+    }catch(err) {
+        console.log("error", err);
+    }
+}
+
+module.exports.editDetails = async (req, res) => {
+    try {
+        let interview = await checkInterview(req.params.id);
+
+        let students = interview.students;
+
+        for(let student of students) {
+            if(req.body[`status-${student.student._id}`] == 'Passed') {
+                await Students.findByIdAndUpdate(student.student._id, {status: "Placed"});
+            }
+
+            student.result = req.body[`status-${student.student._id}`];
+        }
+
+        await Interview.findByIdAndUpdate(interview._id, {students: students});
+        return res.redirect('/');
+    }catch (err) {
+        console.log("error", err);
+    }
+}
+
+module.exports.destroy = async (req, res) => {
+
+    try {
+        let interview = await checkInterview(req.params.id);
+
+        if(!interview) {
+            req.flash('error', 'failed to find interview');
+            return;
+        }
+
+        const assign = interview.students;
+
+        if(assign.length > 0) {
+
+            for(let student of assign) {
+                await Students.findOneAndUpdate({
+                    id: student._id
+                }, {
+                    $pull: {
+                        interview: {
+                            interview: req.params.id
+                        }
+                    }
+                });
+            }
+        }
+
+        await Interview.findByIdAndDelete(req.params.id);
+        req.flash('success', 'Interview Deleted');
+        return res.redirect('back');
+
+    }catch(err) {
+        console.log("error while deleting interview", err);
     }
 }

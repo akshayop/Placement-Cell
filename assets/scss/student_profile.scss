@@ -5,6 +5,7 @@
         width: 30rem;
         margin: auto;
         position: relative;
+        margin-bottom: 3rem;
         
         h2{
             margin: 2rem 0 0.2rem 0.2rem;
@@ -35,4 +36,21 @@
             font-size: 1.4rem;
         }
     }
-}
+
+    #iv-details {
+        width: 30rem;
+        margin: auto;
+        position: relative;
+        
+
+        h2{
+            margin: 2rem 0 0.2rem 0.2rem;
+        }
+
+        #iv-view {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+    }
+} 

@@ -3,7 +3,7 @@
 <div id="stud-profile-container">
     
     <div id="stud-details">
-        
+
         <h2>Student Details</h2>
 
         <div class="stud-show">
@@ -46,32 +46,26 @@
         </div>
     </div>
 
-    <div>
+    <div id="iv-details">
         <% if(student.interview) { %>
             <h2>Applied companies</h2>
     
             <% for(interview of student.interview) { %>
+
+                <div id="iv-view">
+
+                    <div class="stud-show">
+                        <div class="disp-tag">Company Name:</div>
+                        <div class="disp-name"><%= interview.company_name%></div>
+                    </div>
     
-                <div>
-                    <p>Company Name</p>
-                    <p><%= interview.company_name%></p>
+                    <div class="stud-show">
+                        <div class="disp-tag">Date:</div>
+                        <div class="disp-name"><%= interview.date %></div>
+                    </div>
+
                 </div>
-    
-                <div>
-                    <p>Date</p>
-                    <p>interview.date</p>
-                </div>
-    
-                <% for(let interviewResult of interview.students) { %>
-                    
-                    <% if(interviewResult == student._id) {%>
-    
-                        <div>
-                            <p>Result</p>
-                            <p><%= interviewResult.result %></p>
-                        </div>
-                    <% } %>
-                <% } %>
+                
             <% } %>
     
     
