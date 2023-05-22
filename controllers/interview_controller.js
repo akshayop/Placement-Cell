@@ -10,7 +10,7 @@ let checkInterview = async (id) => {
             }
         });
 
-    return interview
+    return interview;
     
 }
 
@@ -58,7 +58,7 @@ module.exports.createInterviews = async (req, res ) => {
 module.exports.showDetails = async (req, res) => {
     try {
         let interview = await checkInterview(req.params.id);
-        let student = await checkInterview(req.params.id);
+
         return res.render('interview_profile', {
             title: 'Placement Cell | Interview Details',
             interview: interview
@@ -78,7 +78,6 @@ module.exports.editDetails = async (req, res) => {
             if(req.body[`status-${student.student._id}`] == 'Passed') {
                 await Students.findByIdAndUpdate(student.student._id, {status: "Placed"});
             }
-
             student.result = req.body[`status-${student.student._id}`];
         }
 

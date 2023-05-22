@@ -202,7 +202,7 @@ module.exports.destroy = async (req, res) => {
 
         // deleting the student from the enrolled company
 
-        if(assignedInterviews.lengthn > 0) {
+        if(assignedInterviews.length > 0) {
             for(let interview of assignedInterviews) {
                 await Interview.findOneAndUpdate({
                     company_name: interview.company_name},

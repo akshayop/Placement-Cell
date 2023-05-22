@@ -40,10 +40,13 @@
                         </div>
     
                         <div class="input-box">
-                            <select name="status"  name="status-<%= student.student._id %>" required>
+                            <select name="status-<%= student.student._id %>">
                                 <option value="">Select Status</option>
-                                <option name="placed" value="Placed">Placed</option>
-                                <option name="notPlaced" value="Not Placed">Not Placed</option>
+                                <option name="Passed" value="Passed">PASS</option>
+                                <option name="Failed" value="Failed">FAIL</option>
+                                <option name="On hold" value="On hold">On hold</option>
+                                <option name="Ongoing" value="Ongoing" selected>Ongoing</option>
+                                <option name="Didn't attempt" value="Didn't attempt">Didn't attempt</option>
                             </select>
                         </div>
                     </div>
@@ -51,10 +54,8 @@
 
             <% } %>
 
-            <input type="submit" value="Update Details">
-
         </div>
 
-        
+        <input type="submit" value="Update Details">
     </form>
 </div>
