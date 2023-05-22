@@ -26,6 +26,8 @@
 #stud-profile-container .stud-show .disp-name {
   padding-bottom: 0.3rem;
   font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  font-weight: 200;
 }
 #stud-profile-container #iv-details {
   width: 30rem;

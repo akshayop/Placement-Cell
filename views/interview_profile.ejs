@@ -28,29 +28,33 @@
                 <h2>Applied Students</h2>
 
                 <% for(student of interview.students) { %>
-                    <div class="input-box">
-                        <input type="text" name="name" value="<%= student.student.name%>" required="required" disabled>
-                        <span>Name</span>
-                    </div>
-
-                    <div class="input-box">
-                        <input type="text" name="status" value="<%= student.result%>" required="required" disabled>
-                        <span>Current Status</span>
-                    </div>
-
-                    <div class="input-box">
-                        <select name="status"  name="status-<%= student.student._id %>" required>
-                            <option value="">Select Status</option>
-                            <option name="placed" value="Placed">Placed</option>
-                            <option name="notPlaced" value="Not Placed">Not Placed</option>
-                        </select>
+                    <div id="iv-view">
+                        <div class="input-box">
+                            <input type="text" name="name" value="<%= student.student.name%>" required="required" disabled>
+                            <span>Name</span>
+                        </div>
+    
+                        <div class="input-box">
+                            <input type="text" name="status" value="<%= student.result%>" required="required" disabled>
+                            <span>Current Status</span>
+                        </div>
+    
+                        <div class="input-box">
+                            <select name="status"  name="status-<%= student.student._id %>" required>
+                                <option value="">Select Status</option>
+                                <option name="placed" value="Placed">Placed</option>
+                                <option name="notPlaced" value="Not Placed">Not Placed</option>
+                            </select>
+                        </div>
                     </div>
                 <% } %>
 
             <% } %>
 
+            <input type="submit" value="Update Details">
+
         </div>
 
-        <input type="submit" value="Update Details">
+        
     </form>
 </div>

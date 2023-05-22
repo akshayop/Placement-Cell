@@ -4,10 +4,22 @@ header{
     align-items: center;
     padding: 0.4rem 3rem;
     background-color: #161b21;
-    #logo-name{
-        font-size: 1.7rem;
-        font-weight: 500;
-        letter-spacing: 0.2rem;
+    
+    #logo-container {
+        display: flex;
+        align-items: center;
+        
+        #image {
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+        #logo-name{
+            font-size: 1.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+        }
     }
 
     ul {

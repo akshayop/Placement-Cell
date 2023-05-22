@@ -8,7 +8,7 @@
   width: 40rem;
   margin-left: 23.2rem;
   min-height: 90vh;
-  gap: 2rem;
+  gap: 5rem;
   background-color: #1d2b3a;
 }
 #iv-profile-container form .input-box {
@@ -44,6 +44,20 @@
   border-right: 1px solid #00dfc4;
   transform: translateX(10px) translateY(-7px);
 }
+#iv-profile-container form .input-box select {
+  width: 10rem;
+  font-size: 1em;
+  height: 2.5rem;
+  margin-right: 2.6rem;
+  border-radius: 0.7rem;
+  color: white;
+  background: #1d2b3a;
+  border: 1px solid #00dfc4;
+  outline: none;
+}
+#iv-profile-container form .input-box select option {
+  color: #00dfc4;
+}
 #iv-profile-container form #iv-details {
   display: flex;
   flex-direction: column;
@@ -52,5 +66,35 @@
 #iv-profile-container form #iv-details h2 {
   position: absolute;
   left: 25.2rem;
-  top: 2rem;
+  top: 4.5rem;
+}
+#iv-profile-container form #selected-stud {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#iv-profile-container form #selected-stud h2 {
+  position: absolute;
+  left: 25.2rem;
+  top: 15.5rem;
+}
+#iv-profile-container form #selected-stud #iv-view {
+  display: flex;
+  justify-content: space-between;
+}
+#iv-profile-container form input[type=submit] {
+  font-size: 1rem;
+  width: 35.7rem;
+  height: 3rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  border: none;
+  color: white;
+  border-radius: 0.7rem;
+  background-color: #49c1a2;
+  transition: 0.5s;
+}
+#iv-profile-container form input[type=submit]:hover {
+  background-color: #4bb543;
+  cursor: pointer;
 }
