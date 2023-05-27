@@ -20,7 +20,7 @@ module.exports.home = async (req, res) => {
         });
     }
 
-    // else redirect to sign in pages
+    // else redirect to sign in page
     else{ 
         return res.redirect('/users/sign-in');
     }
