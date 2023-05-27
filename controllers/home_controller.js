@@ -2,8 +2,12 @@ const passport = require('passport');
 const Student = require('../models/students');
 const Interview = require('../models/interview');
 
+// exporting  Home page controller
+
 module.exports.home = async (req, res) => {
     
+    // checking if user is authenticated or not
+    // if true, then show the details
     if(req.isAuthenticated()) {
 
         let students = await Student.find({});
@@ -16,6 +20,7 @@ module.exports.home = async (req, res) => {
         });
     }
 
+    // else redirect to sign in page
     else{ 
         return res.redirect('/users/sign-in');
     }

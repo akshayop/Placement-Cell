@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+// It is a Schema for the Student which contains some basic details of the student 
+// And also contains, one array, it will contains the details of the interview which students has applied 
+
 const studentsSchema = new mongoose.Schema({
     email: {
         type: String,

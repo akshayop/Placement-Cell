@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+// It is a schema for the interview, and it contains the basic informations like comapny name and date
+// and also contains one arry, So that interview can store which student have ben entered for interviews
+
 const interviewSchema = new mongoose.Schema({
 
     company_name: {

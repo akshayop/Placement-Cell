@@ -35,6 +35,7 @@ module.exports.download = async (req, res) => {
         req.flash('success', "Successfully downloaded");
         return res.download('./uploads/report.csv');
     }catch(err) {
-        console.log("error while downloading ", err);
+        req.flash('error', err);
+        return res.redirect('back');
     }
 }

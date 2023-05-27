@@ -12,12 +12,16 @@ let checkstudent = async (id) => {
 // Student deatils page
 module.exports.addStudent = async (req, res) => {
     
+    //checking user is authenticated or not
+    // iff true, return the details to ejs tobe displayed 
     if(req.isAuthenticated()) {
 
         return res.render('add_student', {
             title: 'Placement Cell | Add Students'
         });
     }
+
+    // redirect to sign in
 
     else {
         req.flash('error', 'Please Sign in again...!');
@@ -81,7 +85,8 @@ module.exports.showDetails = async (req, res) => {
         }
 
     }catch(err) {
-        console.log(err, 'error');
+        req.flash('error', err)
+       return res.redirect('back');
     }
 }   
 
@@ -105,7 +110,8 @@ module.exports.editDetails = async (req, res) => {
             res.redirect('back');
         }
     }catch (err) {
-        console.log(err, 'error');
+        req.flash('error', err);
+        return res.redirect('back');
     }
 }
 
@@ -216,6 +222,7 @@ module.exports.destroy = async (req, res) => {
         return res.redirect('back');
 
     }catch (err){
-        console.log(err, "Error");
+        req.flash('error', err);
+        return res.redirect('back');
     }
 }

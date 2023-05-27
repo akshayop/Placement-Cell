@@ -1,16 +1,14 @@
 const express = require('express');
-const router = express.Router();
-const homeController = require('../controllers/home_controller');
-const downloadController = require('../controllers/download_controller');
+const router = express.Router(); 
+const homeController = require('../controllers/home_controller'); //importing home controller from controllers
+const downloadController = require('../controllers/download_controller'); //importing download controller from controllers
 
 
-console.log('router loaded');
+router.get('/', homeController.home); //rendering the home page
+router.get('/downloads', downloadController.download); //rendering  downloads
+router.use('/users', require('./users')); //User routes
+router.use('/students', require('./students'));//student routes
+router.use('/interview', require('./interviews')); //interview routes
 
-router.get('/', homeController.home);
-router.get('/downloads', downloadController.download)
-router.use('/users', require('./users'));
-router.use('/students', require('./students'));
-router.use('/interview', require('./interviews'));
-
-
+// exporting the router
 module.exports = router;

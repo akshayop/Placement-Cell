@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+const app = express(); //creating express app instance
 const port = 8000; //Port number where our project runs
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -12,9 +12,12 @@ const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
+// to parse the body of the request
 app.use(express.urlencoded());
-app.use(express.static('./assets'));
 
+app.use(express.static('./assets')); //using the static files
+
+// before all routes this middleware should be called to use layout features
 app.use(expressLayouts);
 
 // Extract the style and scripts from subpages into the layouts
@@ -44,6 +47,8 @@ app.use(session({
 // passport use
 app.use(passport.initialize());
 app.use(passport.session());
+
+// sets the authenticated users in the response
 app.use(passport.setAuthenticatedUser);
 
 // connect flash use
@@ -54,7 +59,7 @@ app.use(customMware.setFlash);
 // use express router
 app.use('/', require('./routes'));
 
-// checking the server is up or not
+// listening to the port 800
 app.listen(port, (err)=> {
     // if error occurs 
     if(err) {
