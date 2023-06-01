@@ -13,7 +13,7 @@ const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
 // to parse the body of the request
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
 
 app.use(express.static('./assets')); //using the static files
 
