@@ -40,7 +40,7 @@ module.exports.createInterviews = async (req, res ) => {
     // checking if the user already present or not
     if(checkInterview) {
         req.flash('warning', 'Interview already exists');
-        return re.redirect('back');
+        return res.redirect('back');
     }
 
     // if not present, then create interview 

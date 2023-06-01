@@ -4,7 +4,7 @@
   "description": "In this web application employee can maintain the data of student",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Akshay",

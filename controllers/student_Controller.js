@@ -153,7 +153,8 @@ module.exports.updateStudent = async (req, res) => {
             }
 
             await Interview.findByIdAndUpdate(company._id, {
-                students: students, result:req.body.status
+                students: students, 
+                result:req.body.status
             });
 
             company = await Interview.findById(company._id);
