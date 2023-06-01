@@ -30,20 +30,26 @@ module.exports.download = async (req, res) => {
             }
         }
 
-        const csvFile = fs.writeFile("./uploads/report.csv", report, function(err, data) {
-            if(err) {
-                console.log(err);
-                return res.redirect('back');
-            }
-            return res.download("./uploads/report.csv", (err) => {
-                if(err) {
-                    res.send({
-                        error: err,
-                        msg: "Something went wrong"
-                    })
-                }
-            });
-        });
+        // const csvFile = fs.writeFile("./uploads/report.csv", report, function(err, data) {
+        //     if(err) {
+        //         console.log(err);
+        //         return res.redirect('back');
+        //     }
+        //     return res.download("./uploads/report.csv", (err) => {
+        //         if(err) {
+        //             res.send({
+        //                 error: err,
+        //                 msg: "Something went wrong"
+        //             })
+        //         }
+        //     });
+        // });
+
+        fs.writeFileSync("./uploads/report.csv", report);
+
+        req.flash("success", "Downloaded CSV report!");
+        return res.download("./uploads/report.csv");
+        
     }catch(err) {
         console.log('error', err);
         return res.redirect('back');
