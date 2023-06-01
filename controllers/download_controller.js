@@ -30,10 +30,13 @@ module.exports.download = async (req, res) => {
             }
         }
 
-        fs.writeFileSync('./uploads/report.csv', report);
-
-        req.flash('success', "Successfully downloaded");
-        return res.download('./uploads/report.csv');
+        const csvFile = fs.writeFile("./uploads/report.csv", report, function(err, data) {
+            if(err) {
+                console.log(err);
+                return res.redirect('back');
+            }
+            return res.download('./uploads/report.csv');
+        });
     }catch(err) {
         req.flash('error', err);
         return res.redirect('back');

@@ -49,13 +49,13 @@ module.exports.createStudent = async (req, res) => {
         // if student details is created 
         if(student) {
             req.flash('success', 'Student details added')
-            res.redirect('/')
+            res.redirect('/');
         }
 
         // if student details is not created
         else {
-            req.flash('error', 'Failed to add student details')
-            res.redirect('back')
+            req.flash('error', 'Failed to add student details');
+            res.redirect('back');
         }
     }
 
